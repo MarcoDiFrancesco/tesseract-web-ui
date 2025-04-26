@@ -1,0 +1,97 @@
+.drop-zone {
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    min-height: 300px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: border 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.drop-zone:hover {
+    border-color: #007bff;
+}
+
+.drop-zone__prompt {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.drop-zone--over {
+    border-color: #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.drop-zone__thumb {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.drop-zone__thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    font-size: 14px;
+}
+
+.output-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 300px;
+    padding: 15px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    overflow-y: auto;
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Full page drop zone overlay */
+.full-page-drop-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 167, 69, 0.2);
+    border: 3px dashed #28a745;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.full-page-drop-overlay__message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    color: #28a745;
+    text-align: center;
+}
