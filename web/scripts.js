@@ -12,6 +12,16 @@ const Elements = {
     })
 };
 
+// Apply initial styles to elements
+const Styles = {
+    init: () => {
+        // Set white-space to pre to preserve new lines but not wrap text
+        const ocrOutput = Elements.get().ocrOutput;
+        ocrOutput.style.whiteSpace = 'pre';
+        ocrOutput.style.overflowX = 'auto';
+    }
+};
+
 // Utility functions for common operations
 const Utils = {
     preventDefaults: (e) => {
@@ -295,4 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
     EventListeners.initFileInput(elements);
     EventListeners.initClipboard(elements);
     EventListeners.initCopyButton(elements);
+    
+    // Apply initial styles
+    Styles.init();
 });
