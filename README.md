@@ -1,8 +1,8 @@
 # Tesseract Web UI
 
 Spins up the **Docker containers** for:
-- *tesseract server*: uses *hertzg/tesseract-server*
-- *nginx server*: to expose the tesseract endpoint and the web pages
+- *tesseract server*: uses docker image from *hertzg/tesseract-server*
+- *nginx server*: to expose the *tesseract server* and the web pages in /web
 
 ## Tesseract server
 
@@ -20,7 +20,7 @@ curl -F "options={\"languages\":[\"eng\"]}" -F file=@test.png http://localhost:8
 
 ## Web Interface
 
-**Uncomment** `ocr-web` in the docker compose.
+Uses nginx to expose the endpoint to the *tesseract server* and the web pages in */web*.
 
 ```bash
 docker-compose up -d
