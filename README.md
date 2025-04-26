@@ -1,10 +1,8 @@
-# OCR
+# Tesseract Web UI
 
-OCR Web UI. 
-
-Spins up the Docker containers for:
-- *tesseract server*
-- *nginx server*: to expose the tesseract endpoint and web pages
+Spins up the **Docker containers** for:
+- *tesseract server*: uses *hertzg/tesseract-server*
+- *nginx server*: to expose the tesseract endpoint and the web pages
 
 ## Tesseract server
 
@@ -13,6 +11,8 @@ docker-compose up -d
 ```
 
 Tesseract server: http://localhost:8884
+
+Example:
 
 ```bash
 curl -F "options={\"languages\":[\"eng\"]}" -F file=@test.png http://localhost:8884/tesseract
