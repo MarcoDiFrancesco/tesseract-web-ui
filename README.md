@@ -1,32 +1,29 @@
 # OCR
 
-OCR Web UI.
+OCR Web UI. 
 
-### Running the Server
+Spins up the Docker containers for:
+- *tesseract server*
+- *nginx server*: to expose the tesseract endpoint and web pages
+
+## Tesseract server
 
 ```bash
 docker-compose up -d
 ```
 
-The server will be available at http://localhost:8884
-
-### API Usage
-
-Send OCR requests to the server:
+Tesseract server: http://localhost:8884
 
 ```bash
-curl -F "options={\"languages\":[\"eng\"]}" -F file=@your-image.jpg http://localhost:8884/tesseract
+curl -F "options={\"languages\":[\"eng\"]}" -F file=@test.png http://localhost:8884/tesseract
 ```
 
-### Available Languages
+## Web Interface
 
-The default image includes the following languages:
-- English
-- German
-- French
-- Georgian
-- Polish
-- Russian
+**Uncomment** `ocr-web` in the docker compose.
 
-For more information, see the [tesseract-server documentation](https://github.com/hertzg/tesseract-server).
+```bash
+docker-compose up -d
+```
 
+Web page: http://localhost:8080/
